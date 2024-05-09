@@ -47,7 +47,9 @@ function buildCharts(sample) {
       mode: 'markers',
       marker: {
         size: sampValues,
-        color: otuIds
+        color: otuIds,
+        colorscale: 'Blackbody',
+        type: 'heatmap'
       }
     };
 
@@ -63,7 +65,7 @@ function buildCharts(sample) {
     };
 
     // Render the Bubble Chart
-    Plotly.newPlot('bubble', trace1, layout);
+    Plotly.newPlot('bubble', [trace1], layout);
 
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
